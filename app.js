@@ -23,3 +23,15 @@ function Person() {
 
 const person = new Person();
 person.greet();
+
+Person.prototype = {
+    printAge() {
+        console.log(this.age);
+    }
+};
+
+console.dir(Person);
+const p = new Person();
+p.greet();
+p.printAge();
+console.log(p.__proto__ === Person.prototype);
